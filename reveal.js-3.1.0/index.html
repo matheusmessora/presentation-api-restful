@@ -28,6 +28,9 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+			.destaque { color: blue;}
+		</style>	
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -40,31 +43,66 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+
 				<section>
-					<h1>Introducao</h1>
+					<h1>Sua API é RESTFUL?</h1>
 					<p>
-						O que é REST?
-						architectural style for designing web services
-						Consumed over HTTP
+						<p class="fragment fade-in">Seu Nome</p>
 					</p>
 				</section>
 
 				<section>
-					<h2>PQ REST?</h2>
+					<h1>Está errado?</h1>
 					<p>
-						SOAP dirty
-						Flexibly consumed
-						NO compilation client-server
-						Use JSON
-						lightweight
+						<p class="fragment fade-in"><span class="destaque">GET</span>  /rest/usuario?buscarPorNome=Matheus</p>
+						<p class="fragment fade-in"><span class="destaque">GET</span>  /rest/v1/produtoController/100</p>
+						<p class="fragment fade-in"><span class="destaque">POST</span> /api/Usuario/Compra/efetivar</p>
+						<p class="fragment fade-in"><span class="destaque">PUT</span>  /api/Usuario/Compra/AtualizarEnderecoCliente</p>
 					</p>
 				</section>
+
+
+				<section>
+					<h1>DEPENDE</h1>
+				</section>
+
+
+				<section>
+					<h1>A maioria das vezes, SIM</h1>
+				</section>
+
+
+				<section>
+					<h1>RESTful API</h1>
+					<h3>Tese de doutorado de Roy Fielding, autor da especificação HTTP</h3>
+				</section>
+
+				<section>
+					<h1>Representational State Transfer</h1>
+					<h3>Estilo de arquitetura para web services</h3>
+				</section>
+
+				<section>
+					<h1>Implementação e protocolo desacoplados</h1>
+				</section>
+
+				<section>
+					<h2>POR QUE?</h2>
+					<p>
+						Consumo flexivel
+						Baixo acoplamento cliente-servidor
+						lightweight
+						Fácil integração [[_BROWSERS_]], smartphones, smartwahces, IoT
+						Faz o SOAP parecer {{emoji}}:@
+					</p>
+				</section>
+
 
 				<section>
 					<p>
 						Principios Basicos
-						Em volta de Recursos (URI)
-						CRUD
+						<p class="fragment fade-in">Consumido via HTTP</p>
+						Recursos como URI única
 						Ações - Métodos HTTP
 						Stateless
 					</p>
@@ -73,22 +111,16 @@
 
 
 				<section>
+					<h1>Recursos</h1>
 					<p>
+						{{__IMAGENS__}}
 						Recursos URI
 						Substantivos - SEMPRE
-						Esta na URI
+						URI
 						Eh igual Classe/Objeto em OO
 
 						short URI
-					</p>
-				</section>
-				<section>
-					<p>
-						NAO FAZER
-						
-						/usuarios/buscarUsuarios
-						...
-						/compra/saveAndUpdate
+						Mantenha a coerencia
 					</p>
 				</section>
 
@@ -113,18 +145,6 @@
 						SAFE e INDEPOTENCIA
 					</p>
 				</section>
-				<section>
-					<p>
-						NAO FAZER
-						
-						/usuarios/buscar - POST (filtro muito gigantesco)
-						/usuario PUT
-						/usuarios/remover - DELETE (remocao logica)
-
-						/pull-update (GET not SAFE)
-					</p>
-				</section>
-
 
 				<section>
 					<p>
@@ -135,6 +155,82 @@
 						Meio de pagamento
 					</p>
 				</section>
+
+
+
+				<section>
+					<p>
+						Maturidade REST
+
+						HATEOAS
+					</p>
+				</section>
+
+
+
+				<section>
+					<p>
+						Versioning
+
+						URL /api/v1/aluno
+						Header  X-Version: 1
+						queryParam  /api/aluno?versao=1
+
+						NO VERSION
+					</p>
+				</section>
+
+
+
+				<section>
+					<p>
+						Paginação
+
+						queryParam
+						Header
+					</p>
+				</section>
+
+
+
+				<section>
+					<p>
+						Segurança
+
+						API Gateway
+						Rate-Limit GITHUB
+					</p>
+				</section>
+
+
+
+
+				<section>
+					<p>
+						NAO FAZER
+						
+						/usuarios/buscarUsuarios
+						...
+						/compra/saveAndUpdate
+					</p>
+				</section>
+				<section>
+					<p>
+						NAO FAZER
+						
+						/usuarios/buscar - POST (filtro muito gigantesco)
+						/usuario PUT
+						/usuarios/remover - DELETE (remocao logica)
+
+						/pull-update (GET not SAFE)
+
+						Inconsistencia de governança ( userId, idUser, idPessoa, pessoaId, pessoa, id)
+
+						Encapsulamento de coleçoes (deriva de OO)
+						["123", "456", "678"] -> [{"id": "123"...}]
+					</p>
+				</section>
+
 
 
 
