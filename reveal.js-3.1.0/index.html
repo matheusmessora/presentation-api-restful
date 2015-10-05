@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -79,7 +79,7 @@
 
 				<section>
 					<h1>Representational State Transfer</h1>
-					<h3>Estilo de arquitetura para web services</h3>
+					<h3 class="fragment fade-in">Estilo de arquitetura para web services</h3>
 				</section>
 
 				<section>
@@ -87,9 +87,9 @@
 				</section>
 
 				<section>
-					<h2>POR QUE?</h2>
+					<h1>POR QUE?</h1>
 					<p>
-						Consumo flexivel
+						Consumo flexível
 						Baixo acoplamento cliente-servidor
 						lightweight
 						Fácil integração [[_BROWSERS_]], smartphones, smartwahces, IoT
@@ -99,85 +99,151 @@
 
 
 				<section>
-					<p>
-						Principios Basicos
-						<p class="fragment fade-in">Consumido via HTTP</p>
-						Recursos como URI única
-						Ações - Métodos HTTP
-						Stateless
-					</p>
+					<h1>Princípios Básicos do REST</h1>
 				</section>
 
+				<section>
+					<h1>HTTP everywhere</h1>
+				</section>
+
+
+				<section>
+					<h1>Recursos como informações</h1>
+					<h3 class="fragment fade-in">Substantivos</h3>
+				</section>
+
+				<section>
+					<h1>Métodos HTTP como ações</h1>
+				</section>
+
+
+				<section>
+					<h1>STATELESS</h1>
+				</section>
 
 
 				<section>
 					<h1>Recursos</h1>
 					<p>
-						{{__IMAGENS__}}
-						Recursos URI
-						Substantivos - SEMPRE
-						URI
-						Eh igual Classe/Objeto em OO
-
-						short URI
-						Mantenha a coerencia
+						/api/usuarios<br />
+						/api/pedidos<br />
+						/api/usuarios/123/contas
+						
+						
 					</p>
 				</section>
 
+				<section>
+					<h1>Mantenha a coerencia</h1>
+				</section>
+
+				<section>
+					<h1>SHORT URI</h1>
+
+					<p> /api/floresta/arvore/galho/ramo/folha</p>
+				</section>
 
 
 				<section>
-					<p>
-						CRUD - Métodos HTTP
-						
-						GET
+					<h1>CRUD - Métodos HTTP</h1>
+					<p class="fragment fade-in">
+						GET<br />
 						POST
-						PUT
+					</p>
+					<p class="fragment fade-in">
+						PUT<br />
 						DELETE
+					</p>
 
-						PATCH 
-						HEAD (saber o tamanho de um arquivo)
+
+					<p class="fragment fade-in">
+						PATCH <br />
+						HEAD  <br />
 						CONNECT
 					</p>
 				</section>
 				<section>
-					<p>
-						SAFE e INDEPOTENCIA
+					<h1>SAFE</h1>
+					<p  class="fragment fade-in"> GET<br />
+						HEAD<br />
+						CONNECT
 					</p>
 				</section>
 
 				<section>
-					<p>
-						Negocios Complexos - Janela quebrada -> Predio Quebrado
-
-						Recuperacao de Senha
-						Controle Estoque
-						Meio de pagamento
+					<h1 >Idempotência</h1>
+					<p  class="fragment fade-in">
+						x = 1 <span>sim</span><br />
+						x++ <span>não</span>
 					</p>
 				</section>
 
-
+				<section>
+					<table>
+						<thead>
+							<tr>
+								<th>Método</th>
+								<th>Safe</th>
+								<th>Idempotência</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>GET</td>
+								<td>Sim</td>
+								<td>Sim</td>
+							</tr>
+							<tr>
+								<td>POST</td>
+								<td>Não</td>
+								<td>Não</td>
+							</tr>
+							<tr>
+								<td>PUT</td>
+								<td>Não</td>
+								<td>Sim</td>
+							</tr>
+							<tr>
+								<td>DELETE</td>
+								<td>Não</td>
+								<td>Sim</td>
+							</tr>
+							<tr>
+								<td>PATCH</td>
+								<td>Não <span class="fragment fade-in destaque">(?)</span></td>
+								<td>Não</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
 
 				<section>
-					<p>
-						Maturidade REST
+					<h1>Maturidade REST</h1>
+					
+					{{__MARTIN_FOWLER__IMAGE__}}
+				</section>
 
-						HATEOAS
-					</p>
+				<section>
+					<h1>Negócios complexos?</h1>
+					<h3>Workflows</h3>
+					<h3>ERB</h3>
+				</section>
+
+				<section>
+					<h1>Mantenha-se ao máximo nos conceitos</h1>
+					<p>{{__BROKEN_WINDOWS__}}
 				</section>
 
 
+				<section>
+					<h1>Versionamento</h1>
+					<p class="fragment fade-in">/api/v1/aluno</p>
+					<p class="fragment fade-in">X-Version: 1.0</p>
+					<p class="fragment fade-in">Accept: application/vnd.custom.v2+json</p>
+				</section>
 
 				<section>
-					<p>
-						Versioning
-
-						URL /api/v1/aluno
-						Header  X-Version: 1
-						queryParam  /api/aluno?versao=1
-
-						NO VERSION
-					</p>
+					<h1>Que tal <span class="destaque alerta">não versionar</span>?</h1>
 				</section>
 
 
@@ -259,7 +325,7 @@
 				history: true,
 				center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'none', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [
