@@ -133,8 +133,6 @@
 						/api/usuarios<br />
 						/api/pedidos<br />
 						/api/usuarios/123/contas
-						
-						
 					</p>
 				</section>
 
@@ -152,12 +150,12 @@
 				<section>
 					<h1>CRUD - Métodos HTTP</h1>
 					<p class="fragment fade-in">
-						GET<br />
-						POST
+						GET - Busca de recurso<br />
+						POST - Persistencia de um novo recurso
 					</p>
 					<p class="fragment fade-in">
-						PUT<br />
-						DELETE
+						PUT - Alteração de recurso existente<br />
+						DELETE - Remoção do recurso
 					</p>
 
 
@@ -226,7 +224,7 @@
 
 
 				<section>
-					<h1>HTTP STATUS</h1>
+					<h1>HTTP STATUS RANGE</h1>
 					<p  class="fragment fade-in">
 						200 - OK	
 					</p>
@@ -237,6 +235,106 @@
 						500 - Erro de servidor
 					</p>
 				</section>
+
+				
+				<section>
+					<h1>Versionamento</h1>
+					<p class="fragment fade-in">/api/v1/aluno</p>
+					<p class="fragment fade-in">X-Version: 1.0</p>
+					<p class="fragment fade-in">Accept: application/vnd.custom.v2+json</p>
+				</section>
+
+
+				<section>
+					<h1>Que tal <br /><span class="destaque alerta">não versionar</span>?</h1>
+				</section>
+
+				<section>
+					
+<pre>{
+	id: 123,
+	produto: "Bola de basquete",
+	estoque: 100
+}</pre>
+				</section>
+				<section>
+					
+<pre>{
+	id: 123,
+	produto: "Bola de basquete",
+	estoque: {
+		total: 100,
+		disponivel: 90,
+		reservado: 10
+	}
+}</pre>
+				</section>
+
+
+				<section>
+					<h1>Paginação</h1>
+					<p class="fragment fade-in">/api/produtos?pagina=1</p>
+					<p class="fragment fade-in">X-Pagina: 1</p>
+				</section>
+
+				<section>
+					<h1>Segurança</h1>
+					<p class="fragment fade-in">API Gateway</p>
+					<p class="fragment fade-in">Rate limiting</p>
+				</section>
+
+				<section>
+					<h1>HATEOAS</h1>
+					<p class="fragment fade-in">Hypermedia as the Engine of Application State</p>
+				</section>
+
+<section>
+<pre>
+{
+	results: {
+		[
+			{
+				id: 123,
+				produto: "Bola de basquete"
+			},
+			{
+				id: 100,
+				produto: "Refrigerante"
+			}
+		]
+	}
+}
+</pre>
+</section>
+
+<section>
+<pre>
+results: {
+	[
+		{...},
+		{...}
+	]
+},
+links: [
+	{
+		"rel":"next",
+		"href":"/api/usuarios?page=1&size=5"
+	},
+	{
+		"rel":"first",
+		"href":"/api/usuarios?page=0&size=5"
+	},
+	{
+		"rel":"last",
+		"href":"/api/usuarios?page=999&size=5"
+	},
+	{
+		"rel":"self",
+		"href":"/api/usuarios?page=0&size=5"
+	}
+]
+</pre>
+</section>	
 
 				<section>
 					<h1>Maturidade REST</h1>
@@ -255,31 +353,6 @@
 					<p>{{__BROKEN_WINDOWS__}}
 				</section>
 
-
-				<section>
-					<h1>Versionamento</h1>
-					<p class="fragment fade-in">/api/v1/aluno</p>
-					<p class="fragment fade-in">X-Version: 1.0</p>
-					<p class="fragment fade-in">Accept: application/vnd.custom.v2+json</p>
-				</section>
-
-
-				<section>
-					<h1>Que tal <span class="destaque alerta">não versionar</span>?</h1>
-				</section>
-
-
-				<section>
-					<h1>Paginação</h1>
-					<p class="fragment fade-in">/api/produtos?pagina=1</p>
-					<p class="fragment fade-in">X-Pagina: 1</p>
-				</section>
-
-				<section>
-					<h1>Segurança</h1>
-					<p class="fragment fade-in">API Gateway</p>
-					<p class="fragment fade-in">Rate limiting</p>
-				</section>
 
 
 				<section>
@@ -305,11 +378,8 @@
 
 
 				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
+					<h1>GET</h1>
+					<h2 class="fragment fade-in">/apresentacao/duvidas</h2>
 				</section>
 
 			</div>
