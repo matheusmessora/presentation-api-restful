@@ -1,0 +1,39 @@
+2015/10/09 10:31:32 INFO  - jmeter.util.JMeterUtils: Setting Locale to en_US 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: Loading user properties from: /home/matheusmm/apps/apache-jmeter-2.13/bin/user.properties 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: Loading system properties from: /home/matheusmm/apps/apache-jmeter-2.13/bin/system.properties 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: Setting System property: java.net.preferIPv4Stack=true 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: Copyright (c) 1998-2015 The Apache Software Foundation 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: Version 2.13 r1665067 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: java.version=1.7.0_79 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: java.vm.name=OpenJDK 64-Bit Server VM 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: os.name=Linux 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: os.arch=amd64 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: os.version=3.13.0-57-generic 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: file.encoding=UTF-8 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: Default Locale=English (United States) 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: JMeter  Locale=English (United States) 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: JMeterHome=/home/matheusmm/apps/apache-jmeter-2.13 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: user.dir  =/home/matheusmm/development/git/presentation-api-restful/reveal.js-3.1.0 
+2015/10/09 10:31:32 INFO  - jmeter.JMeter: PWD       =/home/matheusmm/development/git/presentation-api-restful/reveal.js-3.1.0 
+2015/10/09 10:31:33 ERROR - jmeter.util.JMeterUtils: Unable to get local host IP address. 
+2015/10/09 10:31:33 ERROR - jmeter.util.JMeterUtils: Unable to get local host IP address. 
+2015/10/09 10:31:33 ERROR - jmeter.util.JMeterUtils: Unable to get local host IP address. 
+2015/10/09 10:31:33 INFO  - jmeter.JMeter: IP: null Name: null FullName: null 
+2015/10/09 10:31:33 INFO  - jmeter.gui.action.LookAndFeelCommand: Using look and feel: javax.swing.plaf.metal.MetalLookAndFeel [Metal, CrossPlatform, System] 
+2015/10/09 10:31:33 INFO  - jmeter.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties 
+2015/10/09 10:31:34 WARN  - jmeter.gui.action.ActionRouter: java.awt.HeadlessException 
+2015/10/09 10:31:34 FATAL - jmeter.JMeter: An error occurred:  java.awt.HeadlessException
+	at java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:207)
+	at java.awt.Window.<init>(Window.java:535)
+	at java.awt.Frame.<init>(Frame.java:420)
+	at java.awt.Frame.<init>(Frame.java:385)
+	at javax.swing.JFrame.<init>(JFrame.java:174)
+	at org.apache.jmeter.gui.MainFrame.<init>(MainFrame.java:190)
+	at org.apache.jmeter.JMeter.startGui(JMeter.java:242)
+	at org.apache.jmeter.JMeter.start(JMeter.java:385)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.jmeter.NewDriver.main(NewDriver.java:264)
+
