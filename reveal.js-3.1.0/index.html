@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -42,13 +42,18 @@
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+			<div class="slides" style="text-align: left;">
 
 				<section>
 					<h1>Sua API é RESTFUL?</h1>
-					<p>
-						<p class="fragment fade-in">Seu Nome</p>
-					</p>
+				</section>
+
+				<section>
+					<h1>Matheus Messora</h1>
+					<p class="fragment fade-in">5 anos de desenvolvimento Java</p>
+					<p class="fragment fade-in">ResourceIT</p>
+					<p class="fragment fade-in">UOL (backoffice)</p>
+					<p class="fragment fade-in">NETSHOES</p>
 				</section>
 
 				<section>
@@ -99,7 +104,7 @@
 
 
 				<section>
-					<h1>Princípios Básicos do REST</h1>
+					<h1>Princípios Básicos</h1>
 				</section>
 
 				<section>
@@ -113,7 +118,7 @@
 				</section>
 
 				<section>
-					<h1>Métodos HTTP como ações s {{__IMAGENS__}}</h1>
+					<h1>Métodos HTTP como ações {{__IMAGENS__}}</h1>
 				</section>
 
 
@@ -242,11 +247,11 @@
 				<section>
 					<h1>Negócios complexos?</h1>
 					<h3>Workflows</h3>
-					<h3>ERB</h3>
+					<h3>ERP</h3>
 				</section>
 
 				<section>
-					<h1>Mantenha-se ao máximo nos conceitos</h1>
+					<h1>Mantenha-se nos fundamentos</h1>
 					<p>{{__BROKEN_WINDOWS__}}
 				</section>
 
@@ -258,62 +263,45 @@
 					<p class="fragment fade-in">Accept: application/vnd.custom.v2+json</p>
 				</section>
 
+
 				<section>
 					<h1>Que tal <span class="destaque alerta">não versionar</span>?</h1>
 				</section>
 
 
+				<section>
+					<h1>Paginação</h1>
+					<p class="fragment fade-in">/api/produtos?pagina=1</p>
+					<p class="fragment fade-in">X-Pagina: 1</p>
+				</section>
 
 				<section>
-					<p>
-						Paginação
-
-						queryParam
-						Header
-					</p>
+					<h1>Segurança</h1>
+					<p class="fragment fade-in">API Gateway</p>
+					<p class="fragment fade-in">Rate limiting</p>
 				</section>
 
 
-
 				<section>
-					<p>
-						Segurança
-
-						API Gateway
-						Rate-Limit GITHUB
-					</p>
+					<h1>EVITAR</h1>
+					<p class="fragment fade-in">/usuarios/buscarUsuarios</p>
+					<p class="fragment fade-in">/compra/saveAndUpdate</p>
+					<p class="fragment fade-in">/usuarios/buscar - POST</p>
 				</section>
 
 
-
-
 				<section>
-					<p>
-						NAO FAZER
-						
-						/usuarios/buscarUsuarios
-						...
-						/compra/saveAndUpdate
-					</p>
-				</section>
-				<section>
-					<p>
-						NAO FAZER
-						
-						/usuarios/buscar - POST (filtro muito gigantesco)
-						/usuario PUT
-						/usuarios/remover - DELETE (remocao logica)
-
-						/pull-update (GET not SAFE)
-
-						Inconsistencia de governança ( userId, idUser, idPessoa, pessoaId, pessoa, id)
-
-						Encapsulamento de coleçoes (deriva de OO)
-						["123", "456", "678"] -> [{"id": "123"...}]
-					</p>
+					<p>/api/usuarios - PUT sem ID</p>
+					<p class="fragment fade-in">/api/updates - GET como Iterator</p>
 				</section>
 
-
+				<section>
+					<p>Inconsistência de governança<br />
+					(userId, idUser, idPessoa, pessoaId, pessoa, id)</p>
+					<p class="fragment fade-in">Atenção com coleções<br />
+["123", "456", "678"]
+					</p>
+				</section>
 
 
 				<section style="text-align: left;">
