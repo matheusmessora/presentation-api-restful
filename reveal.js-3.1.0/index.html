@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Sua API é Restful?</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -29,7 +29,14 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 		<style>
-			.destaque { color: blue;}
+			.destaque { color: #42affa;}
+			
+			h1 {
+				color: #FFF;
+			}
+			p {
+				color: #DDD;
+			}
 		</style>	
 
 		<!--[if lt IE 9]>
@@ -79,26 +86,26 @@
 
 				<section>
 					<h1>RESTful API</h1>
-					<h3>Tese de doutorado de Roy Fielding, autor da especificação HTTP</h3>
+					<p>Tese de doutorado de Roy Fielding</p>
+					<p>Autor da especificação HTTP</p>
 				</section>
 
 				<section>
 					<h1>Representational State Transfer</h1>
-					<h3 class="fragment fade-in">Estilo de arquitetura para web services</h3>
+					<p class="fragment fade-in">Estilo de arquitetura para web services</p>
 				</section>
 
 				<section>
 					<h2>Implementação desacoplada</h2>
-					<h2>Protocolo desacoplado</h2>
+					<h2 class="fragment fade-in">Protocolo desacoplado</h2>
 				</section>
 
 				<section>
 					<h1>POR QUE?</h1>
 						<p class="fragment fade-in">Consumo flexível</p>
 						<p class="fragment fade-in">Baixo acoplamento cliente-servidor</p>
-						<p class="fragment fade-in">lightweight</p>
-						<p class="fragment fade-in">Fácil integração [[_BROWSERS_]], smartphones, smartwahces, IoT</p>
-						<p class="fragment fade-in">Faz o SOAP parecer {{emoji}}:@</p>
+						<p class="fragment fade-in">Lightweight</p>
+						<p class="fragment fade-in">Fácil integração para smartphones, smartwahces, IoT, browsers</p>
 					</p>
 				</section>
 
@@ -114,18 +121,10 @@
 
 				<section>
 					<h1>Recursos como informações</h1>
-					<h3 class="fragment fade-in">Substantivos {{__IMAGENS__}}</h3>
+					<h3 class="fragment fade-in"><span class="destaque">Substantivos</span></h3>
+					<p class="fragment fade-in">Usuários, Carrinho, Produto</p>
+					<p class="fragment fade-in">Favorito, Estoque, Quitação, Recuperação</p>
 				</section>
-
-				<section>
-					<h1>Métodos HTTP como ações {{__IMAGENS__}}</h1>
-				</section>
-
-
-				<section>
-					<h1>STATELESS</h1>
-				</section>
-
 
 				<section>
 					<h1>Recursos</h1>
@@ -137,25 +136,21 @@
 				</section>
 
 				<section>
-					<h1>Mantenha a coerência</h1>
+					<h1>Ações</h1>
+					<h3 class="fragment fade-in"><span class="destaque">Verbos HTTP</span></h3>
+					<p class="fragment fade-in">Cadastrar, Comprar, Remover</p>
+					<p class="fragment fade-in">Favoritar, Reservar, Quitar, Recuperar</p>
 				</section>
 
 				<section>
-					<h1>SHORT URI</h1>
-
-					<p> /api/floresta/arvore/galho/ramo/folha</p>
-				</section>
-
-
-				<section>
-					<h1>CRUD - Métodos HTTP</h1>
+					<h1>Métodos HTTP</h1>
 					<p class="fragment fade-in">
-						GET - Busca de recurso<br />
-						POST - Persistencia de um novo recurso
+						<span class="destaque">GET</span> - Busca de recurso<br />
+						<span class="destaque">POST</span> - Persistencia de um novo recurso
 					</p>
 					<p class="fragment fade-in">
-						PUT - Alteração de recurso existente<br />
-						DELETE - Remoção do recurso
+						<span class="destaque">PUT</span> - Alteração de recurso existente<br />
+						<span class="destaque">DELETE</span> - Remoção do recurso
 					</p>
 
 
@@ -193,46 +188,77 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							<tr class="fragment fade-in">
 								<td>GET</td>
 								<td>Sim</td>
 								<td>Sim</td>
 							</tr>
-							<tr>
+							<tr class="fragment fade-in">
 								<td>POST</td>
 								<td>Não</td>
 								<td>Não</td>
 							</tr>
-							<tr>
+							<tr class="fragment fade-in">
 								<td>PUT</td>
 								<td>Não</td>
 								<td>Sim</td>
 							</tr>
-							<tr>
+							<tr class="fragment fade-in">
 								<td>DELETE</td>
 								<td>Não</td>
 								<td>Sim</td>
 							</tr>
-							<tr>
+							<tr class="fragment fade-in">
 								<td>PATCH</td>
-								<td>Não <span class="fragment fade-in destaque">?</span></td>
+								<td>Não</td>
 								<td>Não</td>
 							</tr>
 						</tbody>
 					</table>
 				</section>
 
+				<section>
+					<h1>Recursos</h1>
+					<p>
+						<span class="destaque">POST</span> /api/usuarios<br />
+						<span class="destaque">GET</span> /api/pedidos<br />
+						<span class="destaque">HEAD</span> /api/perfil/111/imagem
+					</p>
+				</section>
+
+				<section>
+					<h1>Stateless</h1>
+				</section>
+
+				<section>
+					<h1>Mantenha a coerência</h1>
+				</section>
+
+				<section>
+					<h1>SHORT URI</h1>
+
+					<p> /api/floresta/arvore/galho/ramo/folha</p>
+				</section>
+
+				<section>
+					<h1>SHORT URI</h1>
+
+					<p> /api/floresta/arvore/<span class="destaque">galho</span>/ramo/folha</p>
+				</section>
+
+
+				
 
 				<section>
 					<h1>HTTP STATUS RANGE</h1>
 					<p  class="fragment fade-in">
-						200 - OK	
+						<span class="destaque">200</span> - OK	
 					</p>
 					<p  class="fragment fade-in">
-						400 - Erro de requisição
+						<span class="destaque">400</span> - Erro de requisição
 					</p>
 					<p  class="fragment fade-in">
-						500 - Erro de servidor
+						<span class="destaque">500</span> - Erro de servidor
 					</p>
 				</section>
 
@@ -310,10 +336,7 @@
 <section>
 <pre>
 results: {
-	[
-		{...},
-		{...}
-	]
+	[ {...}, {...} ]
 },
 links: [
 	{
@@ -344,8 +367,8 @@ links: [
 
 				<section>
 					<h1>Negócios complexos?</h1>
-					<h3>Workflows</h3>
-					<h3>ERP</h3>
+					<p class="fragment fade-in">Workflows</p>
+					<p class="fragment fade-in">ERP</p>
 				</section>
 
 				<section>
