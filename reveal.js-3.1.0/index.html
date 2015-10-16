@@ -83,6 +83,13 @@
 					<h1>A maioria das vezes, SIM</h1>
 				</section>
 
+				<section>
+					<h1>REST</h1>
+					<p>Tese de doutorado de Roy Fielding</p>
+					<p>Autor da especificação HTTP</p>
+				</section>
+
+
 
 				<section>
 					<h1>RESTful API</h1>
@@ -96,13 +103,9 @@
 				</section>
 
 				<section>
-					<h2>Implementação desacoplada</h2>
-					<h2 class="fragment fade-in">Protocolo desacoplado</h2>
-				</section>
-
-				<section>
 					<h1>POR QUE?</h1>
 						<p class="fragment fade-in">Consumo flexível</p>
+						<p class="fragment fade-in">Implementação desacoplada</p>
 						<p class="fragment fade-in">Baixo acoplamento cliente-servidor</p>
 						<p class="fragment fade-in">Lightweight</p>
 						<p class="fragment fade-in">Fácil integração para smartphones, smartwahces, IoT, browsers</p>
@@ -146,25 +149,25 @@
 					<h1>Métodos HTTP</h1>
 					<p class="fragment fade-in">
 						<span class="destaque">GET</span> - Busca de recurso<br />
-						<span class="destaque">POST</span> - Persistencia de um novo recurso
+						<span class="destaque">POST</span> - Persistência de um novo recurso
 					</p>
 					<p class="fragment fade-in">
 						<span class="destaque">PUT</span> - Alteração de recurso existente<br />
-						<span class="destaque">DELETE</span> - Remoção do recurso
+						<span class="destaque">DELETE</span> - Remover
 					</p>
 
 
 					<p class="fragment fade-in">
-						PATCH <br />
-						HEAD  <br />
-						CONNECT
+						<span class="destaque">PATCH</span> - Alteração parcial de um recurso existente<br />
+						<span class="destaque">HEAD</span> - Visualizar apenas cabeçalhos do recurso<br />
+						<span class="destaque">OPTIONS</span> - Descobrir funcionalidades<br />
 					</p>
 				</section>
 				<section>
 					<h1>SAFE</h1>
 					<p  class="fragment fade-in"> GET<br />
 						HEAD<br />
-						CONNECT
+						OPTIONS
 					</p>
 				</section>
 
@@ -218,12 +221,27 @@
 				</section>
 
 				<section>
-					<h1>Recursos</h1>
-					<p>
-						<span class="destaque">POST</span> /api/usuarios<br />
-						<span class="destaque">GET</span> /api/pedidos<br />
-						<span class="destaque">HEAD</span> /api/perfil/111/imagem
-					</p>
+					<h1>Chocolate API</h1>
+					<table>
+						<tbody>
+							<tr class="fragment fade-in">
+								<td><span class="destaque">HEAD</span></td>
+								<td>/api/chocolates</td>
+							</tr>
+							<tr class="fragment fade-in">
+								<td><span class="destaque">GET</span></td>
+								<td>/api/chocolates</td>
+							</tr>
+							<tr class="fragment fade-in">
+								<td><span class="destaque">GET</span></td>
+								<td>/api/chocolates/1</td>
+							</tr>
+							<tr class="fragment fade-in">
+								<td><span class="destaque">DELETE</span></td>
+								<td>/api/chocolates/1</td>
+							</tr>
+						</tbody>
+					</table>
 				</section>
 
 				<section>
@@ -278,7 +296,7 @@
 				<section>
 					
 <pre>{
-	id: 123,
+	id: 100,
 	produto: "Bola de basquete",
 	estoque: 100
 }</pre>
@@ -286,7 +304,7 @@
 				<section>
 					
 <pre>{
-	id: 123,
+	id: 100,
 	produto: "Bola de basquete",
 	estoque: {
 		total: 100,
@@ -361,8 +379,7 @@ links: [
 
 				<section>
 					<h1>Maturidade REST</h1>
-					
-					{{__MARTIN_FOWLER__IMAGE__}}
+					<img src="img/maturity-rest.png" />
 				</section>
 
 				<section>
@@ -373,7 +390,6 @@ links: [
 
 				<section>
 					<h1>Mantenha-se nos fundamentos</h1>
-					<p>{{__BROKEN_WINDOWS__}}
 				</section>
 
 
