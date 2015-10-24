@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 	<head>
@@ -57,10 +57,9 @@
 
 				<section>
 					<h1>Matheus Messora</h1>
-					<p class="fragment fade-in">5 anos de desenvolvimento Java</p>
-					<p class="fragment fade-in">ResourceIT</p>
-					<p class="fragment fade-in">UOL (backoffice)</p>
-					<p class="fragment fade-in">NETSHOES</p>
+					<p class="fragment fade-in">Bacharel em Sistemas de Informação</p>
+					<p class="fragment fade-in">Desenvolvedor na Netshoes</p>
+					<p class="fragment fade-in">UOL, Honda, Santander</p>
 				</section>
 
 				<section>
@@ -85,17 +84,10 @@
 
 				<section>
 					<h1>REST</h1>
-					<p>Tese de doutorado de Roy Fielding</p>
+					<p>Dissertação de Roy Fielding</p>
 					<p>Autor da especificação HTTP</p>
 				</section>
 
-
-
-				<section>
-					<h1>RESTful API</h1>
-					<p>Tese de doutorado de Roy Fielding</p>
-					<p>Autor da especificação HTTP</p>
-				</section>
 
 				<section>
 					<h1>Representational State Transfer</h1>
@@ -118,12 +110,19 @@
 				</section>
 
 				<section>
-					<h1>HTTP everywhere</h1>
+					<h1>HTTP &nbsp;&nbsp;&nbsp;everywhere</h1>
+					<p>&nbsp;</p>
 				</section>
 
 
 				<section>
-					<h1>Recursos como informações</h1>
+					<h1>HTTP<span class="destaque">S</span> everywhere</h1>
+					<p>Use TLS, sempre</p>
+				</section>
+
+
+				<section>
+					<h1>Recursos</h1>
 					<h3 class="fragment fade-in"><span class="destaque">Substantivos</span></h3>
 					<p class="fragment fade-in">Usuários, Carrinho, Produto</p>
 					<p class="fragment fade-in">Favorito, Estoque, Quitação, Recuperação</p>
@@ -234,18 +233,36 @@
 							</tr>
 							<tr class="fragment fade-in">
 								<td><span class="destaque">GET</span></td>
-								<td>/api/chocolates/1</td>
-							</tr>
-							<tr class="fragment fade-in">
-								<td><span class="destaque">DELETE</span></td>
-								<td>/api/chocolates/1</td>
+								<td>/api/chocolates/proximo</td>
 							</tr>
 						</tbody>
 					</table>
 				</section>
 
 				<section>
+					<h1>HTTP STATUS</h1>
+					<p  class="fragment fade-in">
+						<span class="destaque">200</span> - OK	
+					</p>
+					<p  class="fragment fade-in">
+						<span class="destaque">201</span> - CREATED
+					</p>
+					<p  class="fragment fade-in">
+						<span class="destaque">400</span> - Erro de requisição
+					</p>
+					<p  class="fragment fade-in">
+						<span class="destaque">500</span> - Erro de servidor
+					</p>
+				</section>
+
+				
+
+				<section>
 					<h1>Stateless</h1>
+				</section>
+
+				<section>
+					<h1>Boas práticas</h1>
 				</section>
 
 				<section>
@@ -266,19 +283,6 @@
 
 
 				
-
-				<section>
-					<h1>HTTP STATUS RANGE</h1>
-					<p  class="fragment fade-in">
-						<span class="destaque">200</span> - OK	
-					</p>
-					<p  class="fragment fade-in">
-						<span class="destaque">400</span> - Erro de requisição
-					</p>
-					<p  class="fragment fade-in">
-						<span class="destaque">500</span> - Erro de servidor
-					</p>
-				</section>
 
 				
 				<section>
@@ -323,7 +327,7 @@
 
 				<section>
 					<h1>Segurança</h1>
-					<p class="fragment fade-in">API Gateway</p>
+					<p class="fragment fade-in">API Gateway <span class="fragment fade-in destaque">API Management</span></p>
 					<p class="fragment fade-in">Rate limiting</p>
 				</section>
 
@@ -398,8 +402,65 @@ links: [
 					<h1>EVITAR</h1>
 					<p class="fragment fade-in">/usuarios/buscarUsuarios</p>
 					<p class="fragment fade-in">/compra/saveAndUpdate</p>
-					<p class="fragment fade-in">/usuarios/buscar - POST</p>
 				</section>
+
+				<section>
+					<p>Consultas com POST</p>
+					<p class="fragment fade-in">/usuarios?
+<span class="fragment fade-in">maiorIdade=true</span>
+<span class="fragment fade-in">&status=ATIVO</span>
+<span class="fragment fade-in">&status=CANCELADO</span>
+<span class="fragment fade-in">&produto.tipo=camisas</span>
+<span class="fragment fade-in">&produto.customizados=SIM</span>
+</p>
+				</section>
+
+<section>
+					<p>Consultas com POST</p>
+<pre>
+> POST - /api/usuarios
+{
+   usuarios: {
+      maiorIdade: true
+   },
+   produtos: {
+      tipo: camisas,
+      customizados: true
+  }
+}
+< 200 - OK
+</pre>
+				</section>
+
+
+
+<section>
+					<p>Consultas com POST</p>
+<pre>
+> POST - /api/usuarios/filtros
+{
+   usuarios: {
+      maiorIdade: true
+   },
+   produtos: {
+      tipo: camisas,
+      customizados: true
+  }
+}
+< 201 - Created
+
+GET - /api/usuarios?filtros=1
+</pre>
+				</section>
+
+
+
+				<section>
+					<h1>UTC para datas</h1>
+					<p class="destaque">ISO-8601</p>
+					<p>2015-10-22T15:27:40Z</p>
+				</section>
+
 
 
 				<section>
@@ -411,7 +472,13 @@ links: [
 					<p>Inconsistência de governança<br />
 					(userId, idUser, idPessoa, pessoaId, pessoa, id)</p>
 					<p class="fragment fade-in">Atenção com coleções<br />
-["123", "456", "678"]
+<pre class="fragment fade-in">
+[
+ "123",
+ "456",
+ "678"
+]
+</pre>
 					</p>
 				</section>
 
@@ -421,6 +488,12 @@ links: [
 					<h2 class="fragment fade-in">/apresentacao/duvidas</h2>
 				</section>
 
+				<section>
+					<h1>InteropMIX SP 2015</h1>
+  					<p>@POGnotFound</p>
+					<p>matheus.messora.vpn@gmail.com</p>
+					<p>linkedin.com/matheusmessora</p>
+				</section>
 			</div>
 
 		</div>
